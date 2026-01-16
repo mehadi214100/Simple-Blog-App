@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Author - Simple Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .active-page {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+        .file-upload-area {
+            transition: all 0.3s ease;
+        }
+        .file-upload-area:hover {
+            border-color: #3b82f6;
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-blog text-blue-600 text-2xl mr-2"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Simple Blog</h1>
+                </div>
+                <div class="flex space-x-2">
+                    <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Home</a>
+                    <a href="add-author.html" class="px-4 py-2 rounded-lg active-page font-medium">Add Author</a>
+                    <a href="add-category.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Category</a>
+                    <a href="add-post.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Post</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Add New Author</h1>
+            <p class="text-gray-600">Add new authors to your blog platform. Authors can write and manage their own blog posts.</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <!-- Author Form -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <form>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Left Column - Profile Picture -->
+                        <div class="lg:col-span-1">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4">Author Photo</h3>
+                            <div class="mb-6">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-40 h-40 rounded-full bg-gray-200 border-4 border-white shadow-lg mb-4 overflow-hidden">
+                                        <img id="author-avatar-preview" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                             alt="Author Avatar" class="w-full h-full object-cover">
+                                    </div>
+                                    <label for="author-avatar" class="file-upload-area cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition">
+                                        <div class="flex flex-col items-center">
+                                            <i class="fas fa-cloud-upload-alt text-gray-400 text-3xl mb-3"></i>
+                                            <p class="text-gray-700 font-medium mb-1">Upload Author Photo</p>
+                                            <p class="text-gray-500 text-sm">JPG, PNG or GIF (Max 2MB)</p>
+                                        </div>
+                                        <input type="file" id="author-avatar" class="hidden" accept="image/*">
+                                    </label>
+                                    <p class="text-gray-500 text-sm mt-4 text-center">Recommended size: 400x400 pixels</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column - Form Fields -->
+                        <div class="lg:col-span-2">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4">Author Details</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="author-firstname" class="block text-gray-700 font-medium mb-2">
+                                        First Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="author-firstname" 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                           placeholder="Enter first name">
+                                </div>
+                                
+                                <div>
+                                    <label for="author-lastname" class="block text-gray-700 font-medium mb-2">
+                                        Last Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="author-lastname" 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                           placeholder="Enter last name">
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="author-email" class="block text-gray-700 font-medium mb-2">
+                                    Email Address <span class="text-red-500">*</span>
+                                </label>
+                                <input type="email" id="author-email" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                       placeholder="author@example.com">
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="author-bio" class="block text-gray-700 font-medium mb-2">Author Biography</label>
+                                <textarea id="author-bio" rows="4" 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                          placeholder="Tell us about the author..."></textarea>
+                                <p class="text-gray-500 text-sm mt-2">A brief biography that will be displayed on the author's profile page.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="author-website" class="block text-gray-700 font-medium mb-2">Website</label>
+                                    <input type="url" id="author-website" 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                           placeholder="https://example.com">
+                                </div>
+                                
+                                <div>
+                                    <label for="author-twitter" class="block text-gray-700 font-medium mb-2">Twitter Handle</label>
+                                    <div class="flex">
+                                        <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 rounded-l-lg bg-gray-50 text-gray-500">@</span>
+                                        <input type="text" id="author-twitter" 
+                                               class="w-full px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                                               placeholder="username">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="author-expertise" class="block text-gray-700 font-medium mb-2">Areas of Expertise</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="ml-2 text-gray-700">Technology</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="ml-2 text-gray-700">Lifestyle</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="ml-2 text-gray-700">Health</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="ml-2 text-gray-700">Business</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="ml-2 text-gray-700">Design</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="ml-2 text-gray-700">Travel</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end space-x-4 pt-4">
+                                <button type="reset" class="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition">
+                                    Clear Form
+                                </button>
+                                <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition flex items-center">
+                                    <i class="fas fa-user-plus mr-2"></i> Add Author
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Existing Authors -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Existing Authors</h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Author</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Posts</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">JD</div>
+                                        <div>
+                                            <div class="font-medium text-gray-900">John Doe</div>
+                                            <div class="text-gray-500">Technology Writer</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-700">john.doe@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">12 Posts</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
+                                    <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-3">AS</div>
+                                        <div>
+                                            <div class="font-medium text-gray-900">Alice Smith</div>
+                                            <div class="text-gray-500">Lifestyle Blogger</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-700">alice.smith@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">8 Posts</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
+                                    <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-3">RJ</div>
+                                        <div>
+                                            <div class="font-medium text-gray-900">Robert Johnson</div>
+                                            <div class="text-gray-500">Web Developer</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-700">robert.j@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full">15 Posts</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
+                                    <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold mr-3">MW</div>
+                                        <div>
+                                            <div class="font-medium text-gray-900">Maria Wilson</div>
+                                            <div class="text-gray-500">Health Expert</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-700">maria.w@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full">5 Posts</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Inactive</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
+                                    <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-3">TC</div>
+                                        <div>
+                                            <div class="font-medium text-gray-900">Thomas Clark</div>
+                                            <div class="text-gray-500">Business Analyst</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-700">thomas.c@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">7 Posts</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
+                                    <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-blog text-blue-400 text-2xl mr-3"></i>
+                        <h2 class="text-2xl font-bold">Simple Blog</h2>
+                    </div>
+                    <p class="text-gray-400 mt-2 max-w-md">A simple blogging platform for sharing knowledge, ideas, and stories with the world.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
+                            <a href="add-author.html" class="text-gray-300 hover:text-white">Add Author</a>
+                            <a href="add-category.html" class="text-gray-300 hover:text-white">Add Category</a>
+                            <a href="add-post.html" class="text-gray-300 hover:text-white">Add Post</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Categories</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-gray-300 hover:text-white">Technology</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Lifestyle</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Health</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Business</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Simple Blog. All rights reserved. | Made with <i class="fas fa-heart text-red-400 mx-1"></i> for bloggers</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

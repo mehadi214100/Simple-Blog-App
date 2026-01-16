@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home - Simple Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .active-page {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .blog-image {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="\" class="flex items-center">
+                    <i class="fas fa-blog text-blue-600 text-2xl mr-2"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Simple Blog</h1>
+                </a>
+                <div class="flex space-x-2">
+                    <a href="index.html" class="px-4 py-2 rounded-lg active-page font-medium">Home</a>
+                    <a href="add-author.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Author</a>
+                    <a href="add-category.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Category</a>
+                    <a href="add-post.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Post</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to Simple Blog</h1>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Read the latest articles on technology, lifestyle, health, and more from our talented authors.</p>
+        </div>
+
+        <!-- Featured Post -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">Featured Post</h2>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/5">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Featured Blog Post" class="w-full h-64 md:h-full blog-image">
+                    </div>
+                    <div class="md:w-3/5 p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mr-3">Technology</span>
+                            <span class="text-gray-500"><i class="far fa-calendar mr-1"></i> June 15, 2023</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">The Future of Web Development in 2023</h3>
+                        <p class="text-gray-600 mb-6">Explore the latest trends and technologies shaping the future of web development. From AI-powered tools to new JavaScript frameworks, discover what's next for developers.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">JD</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">John Doe</h4>
+                                    <p class="text-gray-500 text-sm">Senior Developer</p>
+                                </div>
+                            </div>
+                            <a href="blog-view.html" class="text-blue-600 hover:text-blue-800 font-medium">Read Full Article →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Blog Posts -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-4">Latest Posts</h2>
+                <div class="flex space-x-2">
+                    <span class="text-gray-500">Sort by:</span>
+                    <select class="border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Newest</option>
+                        <option>Popular</option>
+                        <option>Oldest</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Blog Post" class="w-full h-48 blog-image">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Lifestyle</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-gray-500 text-sm"><i class="far fa-calendar mr-1"></i> May 28, 2023</span>
+                            <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">10 Habits of Highly Productive People</h3>
+                        <p class="text-gray-600 mb-4">Discover the daily habits that can transform your productivity and help you achieve more in less time.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-2">AS</div>
+                                <span class="text-gray-700 font-medium">Alice Smith</span>
+                            </div>
+                            <a href="blog-view.html" class="text-blue-600 hover:text-blue-800">Read →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Blog Post" class="w-full h-48 blog-image">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">Health</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-gray-500 text-sm"><i class="far fa-calendar mr-1"></i> May 15, 2023</span>
+                            <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Meditation for Beginners: A Complete Guide</h3>
+                        <p class="text-gray-600 mb-4">Learn how to start a meditation practice that can reduce stress, improve focus, and enhance overall well-being.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white font-bold mr-2">MW</div>
+                                <span class="text-gray-700 font-medium">Maria Wilson</span>
+                            </div>
+                            <a href="blog-view.html" class="text-blue-600 hover:text-blue-800">Read →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Blog Post" class="w-full h-48 blog-image">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Web Dev</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-gray-500 text-sm"><i class="far fa-calendar mr-1"></i> May 5, 2023</span>
+                            <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Building REST APIs with Node.js and Express</h3>
+                        <p class="text-gray-600 mb-4">A step-by-step guide to creating robust RESTful APIs using Node.js, Express, and MongoDB for your next project.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-2">RJ</div>
+                                <span class="text-gray-700 font-medium">Robert Johnson</span>
+                            </div>
+                            <a href="blog-view.html" class="text-blue-600 hover:text-blue-800">Read →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Blog Post" class="w-full h-48 blog-image">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Business</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-gray-500 text-sm"><i class="far fa-calendar mr-1"></i> April 22, 2023</span>
+                            <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Startup Funding: From Idea to Investment</h3>
+                        <p class="text-gray-600 mb-4">Learn the different stages of startup funding and how to secure investment for your business idea.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-2">TC</div>
+                                <span class="text-gray-700 font-medium">Thomas Clark</span>
+                            </div>
+                            <a href="blog-view.html" class="text-blue-600 hover:text-blue-800">Read →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Blog Post" class="w-full h-48 blog-image">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full">Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-gray-500 text-sm"><i class="far fa-calendar mr-1"></i> April 10, 2023</span>
+                            <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design Principles for 2023</h3>
+                        <p class="text-gray-600 mb-4">Explore the latest UI/UX design trends and principles that will dominate the digital landscape this year.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold mr-2">ED</div>
+                                <span class="text-gray-700 font-medium">Emma Davis</span>
+                            </div>
+                            <a href="blog-view.html" class="text-blue-600 hover:text-blue-800">Read →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 6 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Blog Post" class="w-full h-48 blog-image">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-3 py-1 rounded-full">Travel</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-gray-500 text-sm"><i class="far fa-calendar mr-1"></i> March 28, 2023</span>
+                            <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i> 12 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Top 10 Hidden Gems in Europe</h3>
+                        <p class="text-gray-600 mb-4">Discover lesser-known but breathtaking destinations in Europe that you should add to your travel bucket list.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold mr-2">LB</div>
+                                <span class="text-gray-700 font-medium">Lisa Brown</span>
+                            </div>
+                            <a href="blog-view.html" class="text-blue-600 hover:text-blue-800">Read →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+            <nav class="flex items-center space-x-2">
+                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium">1</a>
+                <a href="#" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 font-medium">2</a>
+                <a href="#" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 font-medium">3</a>
+                <a href="#" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 font-medium">4</a>
+                <a href="#" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 font-medium">Next →</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-blog text-blue-400 text-2xl mr-3"></i>
+                        <h2 class="text-2xl font-bold">Simple Blog</h2>
+                    </div>
+                    <p class="text-gray-400 mt-2 max-w-md">A simple blogging platform for sharing knowledge, ideas, and stories with the world.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
+                            <a href="add-author.html" class="text-gray-300 hover:text-white">Add Author</a>
+                            <a href="add-category.html" class="text-gray-300 hover:text-white">Add Category</a>
+                            <a href="add-post.html" class="text-gray-300 hover:text-white">Add Post</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Categories</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-gray-300 hover:text-white">Technology</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Lifestyle</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Health</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Business</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Simple Blog. All rights reserved. | Made with <i class="fas fa-heart text-red-400 mx-1"></i> for bloggers</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

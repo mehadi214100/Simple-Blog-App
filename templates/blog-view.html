@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Web Development in 2023 - Simple Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .active-page {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .blog-content h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #374151;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .blog-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+        .blog-content blockquote {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #4b5563;
+        }
+        .blog-content pre {
+            background-color: #1f2937;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        .blog-content code {
+            background-color: #f3f4f6;
+            color: #dc2626;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+        .blog-content img {
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+        }
+        .author-social a:hover {
+            transform: translateY(-2px);
+            transition: transform 0.2s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-blog text-blue-600 text-2xl mr-2"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Simple Blog</h1>
+                </div>
+                <div class="flex space-x-2">
+                    <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Home</a>
+                    <a href="add-author.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Author</a>
+                    <a href="add-category.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Category</a>
+                    <a href="add-post.html" class="px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Add Post</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="mb-6">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-home mr-2"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Technology</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Current Post</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <!-- Blog Header -->
+            <div class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full">Technology</span>
+                    <span class="mx-4 text-gray-400">•</span>
+                    <span class="text-gray-600"><i class="far fa-calendar mr-2"></i> June 15, 2023</span>
+                    <span class="mx-4 text-gray-400">•</span>
+                    <span class="text-gray-600"><i class="far fa-clock mr-2"></i> 8 min read</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">The Future of Web Development in 2023: Trends and Predictions</h1>
+                
+                <div class="flex items-center mb-8">
+                    <div class="flex items-center mr-6">
+                        <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">JD</div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">John Doe</h3>
+                            <p class="text-gray-600">Senior Full-Stack Developer</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">
+                        <i class="fas fa-eye mr-2"></i> 2,845 views
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="mb-10">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Web Development Future" 
+                     class="w-full h-auto rounded-2xl shadow-lg">
+                <p class="text-center text-gray-500 text-sm mt-3">The evolution of web development tools and technologies continues at a rapid pace</p>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-12 blog-content">
+                <!-- Introduction -->
+                <div class="mb-10">
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        The world of web development is evolving at an unprecedented pace. As we move through 2023, 
+                        developers are witnessing groundbreaking changes in tools, frameworks, and methodologies that 
+                        are reshaping how we build for the web. From AI-assisted coding to new JavaScript frameworks, 
+                        the landscape is more exciting than ever.
+                    </p>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-6 mb-10">
+                    <h3 class="font-bold text-gray-800 text-xl mb-4">Table of Contents</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#ai-coding" class="text-blue-600 hover:text-blue-800 hover:underline">1. AI-Assisted Development</a></li>
+                        <li><a href="#jamstack" class="text-blue-600 hover:text-blue-800 hover:underline">2. The Rise of JAMstack</a></li>
+                        <li><a href="#web3" class="text-blue-600 hover:text-blue-800 hover:underline">3. Web3 and Blockchain Integration</a></li>
+                        <li><a href="#serverless" class="text-blue-600 hover:text-blue-800 hover:underline">4. Serverless Architecture</a></li>
+                        <li><a href="#low-code" class="text-blue-600 hover:text-blue-800 hover:underline">5. Low-Code/No-Code Platforms</a></li>
+                        <li><a href="#conclusion" class="text-blue-600 hover:text-blue-800 hover:underline">6. Conclusion</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 1 -->
+                <section id="ai-coding" class="mb-12">
+                    <h2>1. AI-Assisted Development: The New Norm</h2>
+                    
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="AI Coding Assistant" 
+                         class="w-full h-64 md:h-80 object-cover rounded-xl">
+                    
+                    <p>
+                        Artificial Intelligence has made significant inroads into web development. Tools like GitHub Copilot 
+                        and Amazon CodeWhisperer are transforming how developers write code. These AI assistants can:
+                    </p>
+                    
+                    <ul class="list-disc pl-6">
+                        <li>Generate code snippets based on natural language descriptions</li>
+                        <li>Auto-complete entire functions and classes</li>
+                        <li>Identify and fix bugs in real-time</li>
+                        <li>Suggest optimizations and best practices</li>
+                    </ul>
+                    
+                    <p>
+                        According to recent surveys, developers using AI tools report a <strong>30-40% increase in productivity</strong>. 
+                        However, this doesn't mean developers will be replaced. Instead, AI serves as a powerful assistant, 
+                        allowing developers to focus on complex problem-solving and architecture design.
+                    </p>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl my-6">
+                        <h3 class="font-bold text-gray-800 mb-3">Code Example: AI-Generated React Component</h3>
+                        <pre><code>// AI-generated React component for a user profile card
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const UserProfileCard = ({ user, onEdit, onDelete }) => {
+  return (
+    &lt;div className="bg-white shadow-lg rounded-xl p-6"&gt;
+      &lt;div className="flex items-center mb-4"&gt;
+        &lt;img 
+          src={user.avatar} 
+          alt={user.name}
+          className="w-16 h-16 rounded-full mr-4"
+        /&gt;
+        &lt;div&gt;
+          &lt;h3 className="text-xl font-bold text-gray-800"&gt;{user.name}&lt;/h3&gt;
+          &lt;p className="text-gray-600"&gt;{user.title}&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p className="text-gray-700 mb-4"&gt;{user.bio}&lt;/p&gt;
+      &lt;div className="flex space-x-3"&gt;
+        &lt;button 
+          onClick={onEdit}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+        &gt;
+          Edit Profile
+        &lt;/button&gt;
+        &lt;button 
+          onClick={onDelete}
+          className="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200"
+        &gt;
+          Delete
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+UserProfileCard.propTypes = {
+  user: PropTypes.object.isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
+
+export default UserProfileCard;</code></pre>
+                        <p class="text-sm text-gray-500 mt-2">Example of an AI-generated React component with proper TypeScript support</p>
+                    </div>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="jamstack" class="mb-12">
+                    <h2>2. The Rise of JAMstack Architecture</h2>
+                    
+                    <p>
+                        JAMstack (JavaScript, APIs, and Markup) continues to gain popularity for building fast, secure, 
+                        and scalable websites. The key advantages include:
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+                        <div class="bg-blue-50 p-5 rounded-xl">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-bolt text-blue-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Performance</h4>
+                            <p class="text-gray-600">Pre-rendered content and CDN delivery ensure lightning-fast load times</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-5 rounded-xl">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Security</h4>
+                            <p class="text-gray-600">Reduced attack surface with decoupled architecture and static files</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-5 rounded-xl">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-expand-arrows-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Scalability</h4>
+                            <p class="text-gray-600">Easily handles traffic spikes with CDN-based delivery</p>
+                        </div>
+                    </div>
+                    
+                    <p>
+                        Popular JAMstack frameworks like <strong>Next.js</strong>, <strong>Gatsby</strong>, and <strong>Nuxt.js</strong> 
+                        are seeing massive adoption. According to the State of JS 2022 survey, Next.js is now used by 
+                        48% of respondents, making it one of the most popular React frameworks.
+                    </p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="web3" class="mb-12">
+                    <h2>3. Web3 and Blockchain Integration</h2>
+                    
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Web3 Blockchain" 
+                         class="w-full h-64 md:h-80 object-cover rounded-xl">
+                    
+                    <p>
+                        While still in its early stages, Web3 development is creating new opportunities for web developers. 
+                        The integration of blockchain technology into web applications is becoming more accessible with tools like:
+                    </p>
+                    
+                    <ul class="list-disc pl-6 mb-6">
+                        <li><strong>Ethereum & Smart Contracts</strong>: Building decentralized applications (dApps)</li>
+                        <li><strong>IPFS</strong>: Distributed file storage for truly decentralized web</li>
+                        <li><strong>Web3.js & Ethers.js</strong>: Libraries for interacting with Ethereum blockchain</li>
+                        <li><strong>MetaMask Integration</strong>: Browser wallet for cryptocurrency transactions</li>
+                    </ul>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mb-6">
+                        <div class="flex">
+                            <i class="fas fa-lightbulb text-yellow-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Important Consideration</h4>
+                                <p class="text-gray-700">
+                                    Web3 development requires understanding of cryptography, consensus mechanisms, and 
+                                    decentralized systems. Start with small projects and focus on user experience – 
+                                    the technology should be invisible to the end user.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="serverless" class="mb-12">
+                    <h2>4. Serverless Architecture: Beyond Functions</h2>
+                    
+                    <p>
+                        Serverless computing has evolved from simple function execution to full-stack application hosting. 
+                        The benefits are clear:
+                    </p>
+                    
+                    <blockquote>
+                        "Serverless architecture allows developers to focus on writing code without worrying about 
+                        infrastructure management. It's not just about cost savings, but about developer productivity 
+                        and business agility."
+                    </blockquote>
+                    
+                    <p>
+                        Major cloud providers are expanding their serverless offerings:
+                    </p>
+                    
+                    <ul class="list-disc pl-6">
+                        <li><strong>AWS Lambda</strong>: Now supports container images up to 10GB</li>
+                        <li><strong>Google Cloud Run</strong>: Fully managed serverless containers</li>
+                        <li><strong>Vercel</strong>: Frontend cloud optimized for Next.js applications</li>
+                        <li><strong>Netlify Functions</strong>: Integrated with the JAMstack workflow</li>
+                    </ul>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="low-code" class="mb-12">
+                    <h2>5. Low-Code/No-Code Platforms: Democratizing Development</h2>
+                    
+                    <p>
+                        Low-code and no-code platforms are making web development accessible to non-developers. 
+                        While traditional developers might view this as a threat, it's actually creating more opportunities:
+                    </p>
+                    
+                    <div class="overflow-x-auto my-6">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Platform</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Best For</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Learning Curve</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customization</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Webflow</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Design-heavy websites</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Medium</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">High</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Bubble</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Web applications</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">High</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Very High</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Wix</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Small business sites</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Low</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Medium</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Shopify</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">E-commerce stores</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Low</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Medium</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p>
+                        Professional developers are increasingly needed to customize, extend, and integrate these 
+                        platforms with existing systems, creating a new niche for developer expertise.
+                    </p>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion" class="mb-12">
+                    <h2>6. Conclusion: Embracing the Future</h2>
+                    
+                    <p>
+                        The future of web development in 2023 is characterized by increased abstraction, automation, 
+                        and specialization. Key takeaways for developers:
+                    </p>
+                    
+                    <ol class="list-decimal pl-6 mb-6">
+                        <li><strong>Embrace AI tools</strong> to enhance productivity, not replace skills</li>
+                        <li><strong>Master modern frameworks</strong> like Next.js and React 18 features</li>
+                        <li><strong>Understand serverless patterns</strong> and edge computing</li>
+                        <li><strong>Explore emerging technologies</strong> like Web3 with a critical eye</li>
+                        <li><strong>Focus on fundamentals</strong> - no tool replaces core programming knowledge</li>
+                    </ol>
+                    
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
+                        <h3 class="font-bold text-gray-800 text-2xl mb-4">The Bottom Line</h3>
+                        <p class="text-gray-700 text-lg">
+                            The most successful developers in 2023 will be those who can adapt to new tools while maintaining 
+                            strong fundamentals. Specialization in areas like performance optimization, accessibility, or 
+                            specific frameworks will become increasingly valuable as the ecosystem grows more complex.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Tags -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <h3 class="font-bold text-gray-800 text-xl mb-4">Tags</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200">web-development</a>
+                        <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200">technology</a>
+                        <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200">trends-2023</a>
+                        <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200">javascript</a>
+                        <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200">ai</a>
+                        <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200">jamstack</a>
+                        <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200">serverless</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Author Bio -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+                <h3 class="font-bold text-gray-800 text-2xl mb-6">About the Author</h3>
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="md:w-1/4 mb-6 md:mb-0">
+                        <div class="w-32 h-32 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto md:mx-0">JD</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h4 class="font-bold text-gray-800 text-xl mb-2">John Doe</h4>
+                        <p class="text-blue-600 font-medium mb-3">Senior Full-Stack Developer</p>
+                        <p class="text-gray-600 mb-6">
+                            John has over 10 years of experience in web development, specializing in modern JavaScript 
+                            frameworks and cloud architecture. He has worked with Fortune 500 companies and tech startups 
+                            to build scalable web applications. John is passionate about teaching and regularly contributes 
+                            to open-source projects.
+                        </p>
+                        <div class="author-social flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-200">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-200">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-200">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-200">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share Options -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+                <h3 class="font-bold text-gray-800 text-2xl mb-6">Share This Article</h3>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center">
+                        <i class="fab fa-twitter mr-2"></i> Twitter
+                    </a>
+                    <a href="#" class="px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 flex items-center">
+                        <i class="fab fa-facebook-f mr-2"></i> Facebook
+                    </a>
+                    <a href="#" class="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 flex items-center">
+                        <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                    </a>
+                    <a href="#" class="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center">
+                        <i class="fab fa-pinterest-p mr-2"></i> Pinterest
+                    </a>
+                    <button class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 flex items-center">
+                        <i class="fas fa-link mr-2"></i> Copy Link
+                    </button>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="font-bold text-gray-800 text-2xl">Comments (24)</h3>
+                    <button class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Add Comment
+                    </button>
+                </div>
+                
+                <!-- Comment Form -->
+                <div class="mb-10 p-6 bg-gray-50 rounded-xl">
+                    <h4 class="font-bold text-gray-800 mb-4">Leave a Comment</h4>
+                    <form>
+                        <div class="mb-4">
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Share your thoughts..."></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <input type="text" class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Your Name">
+                            <input type="email" class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Your Email">
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Comments List -->
+                <div class="space-y-8">
+                    <!-- Comment 1 -->
+                    <div class="border-b border-gray-200 pb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">AS</div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Alice Smith</h5>
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <span>June 16, 2023</span>
+                                    <span class="mx-2">•</span>
+                                    <span>2:30 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Great article! I've been using GitHub Copilot for a few months now and it's truly 
+                            revolutionary. The productivity gains are real, especially for boilerplate code. 
+                            Do you think AI will eventually write entire applications?
+                        </p>
+                        <div class="flex space-x-4">
+                            <button class="text-blue-600 hover:text-blue-800 font-medium">Reply</button>
+                            <button class="text-gray-600 hover:text-gray-800">
+                                <i class="far fa-thumbs-up mr-1"></i> 12
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 2 -->
+                    <div class="border-b border-gray-200 pb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">RJ</div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Robert Johnson</h5>
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <span>June 15, 2023</span>
+                                    <span class="mx-2">•</span>
+                                    <span>5:45 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Excellent overview of the current landscape. I'd add that TypeScript adoption continues 
+                            to grow rapidly. According to the Stack Overflow survey, it's now the 5th most loved 
+                            programming language. The type safety it provides in large codebases is invaluable.
+                        </p>
+                        <div class="flex space-x-4">
+                            <button class="text-blue-600 hover:text-blue-800 font-medium">Reply</button>
+                            <button class="text-gray-600 hover:text-gray-800">
+                                <i class="far fa-thumbs-up mr-1"></i> 8
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 3 -->
+                    <div class="pb-4">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold mr-4">MW</div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Maria Wilson</h5>
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <span>June 15, 2023</span>
+                                    <span class="mx-2">•</span>
+                                    <span>11:20 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Thanks for this comprehensive guide! As someone transitioning from backend to full-stack 
+                            development, this helps me understand what to focus on. The section on serverless was 
+                            particularly helpful - I've been hesitant to dive in but this clarifies the benefits.
+                        </p>
+                        <div class="flex space-x-4">
+                            <button class="text-blue-600 hover:text-blue-800 font-medium">Reply</button>
+                            <button class="text-gray-600 hover:text-gray-800">
+                                <i class="far fa-thumbs-up mr-1"></i> 5
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <button class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium">
+                        Load More Comments
+                    </button>
+                </div>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h3 class="font-bold text-gray-800 text-2xl mb-8">Related Articles</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Related Post 1 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Related Post" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">Lifestyle</span>
+                            <h4 class="font-bold text-gray-800 mb-2">10 Habits of Highly Productive Developers</h4>
+                            <p class="text-gray-600 text-sm mb-4">Learn the daily routines that successful developers swear by.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Post 2 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Related Post" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">Web Dev</span>
+                            <h4 class="font-bold text-gray-800 mb-2">Building REST APIs with Node.js and Express</h4>
+                            <p class="text-gray-600 text-sm mb-4">A step-by-step guide to creating robust RESTful APIs.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Post 3 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Related Post" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">Design</span>
+                            <h4 class="font-bold text-gray-800 mb-2">UI/UX Design Principles for Developers</h4>
+                            <p class="text-gray-600 text-sm mb-4">Essential design principles every developer should know.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-blog text-blue-400 text-2xl mr-3"></i>
+                        <h2 class="text-2xl font-bold">Simple Blog</h2>
+                    </div>
+                    <p class="text-gray-400 mt-2 max-w-md">A simple blogging platform for sharing knowledge, ideas, and stories with the world.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
+                            <a href="add-author.html" class="text-gray-300 hover:text-white">Add Author</a>
+                            <a href="add-category.html" class="text-gray-300 hover:text-white">Add Category</a>
+                            <a href="add-post.html" class="text-gray-300 hover:text-white">Add Post</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Categories</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-gray-300 hover:text-white">Technology</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Lifestyle</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Health</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Business</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Simple Blog. All rights reserved. | Made with <i class="fas fa-heart text-red-400 mx-1"></i> for bloggers</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
