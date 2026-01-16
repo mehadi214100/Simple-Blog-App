@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home - Simple Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .active-page {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .blog-image {
+            height: 200px;
+            object-fit: cover;
+
+        }
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .color-option.selected {
+            border-color: #1e40af;
+            transform: scale(1.1);
+        }
+        .category-badge {
+            transition: transform 0.2s;
+        }
+        .category-badge:hover {
+            transform: translateY(-2px);
+        }
+
+
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="\" class="flex items-center">
+                    <i class="fas fa-blog text-blue-600 text-2xl mr-2"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Simple Blog</h1>
+                </a>
+                <div class="flex space-x-2">
+                    <a href="{% url "home" %}" class="px-4 py-2 rounded-lg  {% if request.resolver_match.url_name == 'home' %}active-page{% endif %}  font-medium">Home</a>
+                    <a href="add-author.html" class="px-4 py-2 rounded-lg  font-medium">Add Author</a>
+                    <a href="{% url "add_category" %}" class="px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'add_category' %}active-page{% endif %} font-medium">Add Category</a>
+                    <a href="add-post.html" class="px-4 py-2 rounded-lg font-medium">Add Post</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-blog text-blue-400 text-2xl mr-3"></i>
+                        <h2 class="text-2xl font-bold">Simple Blog</h2>
+                    </div>
+                    <p class="text-gray-400 mt-2 max-w-md">A simple blogging platform for sharing knowledge, ideas, and stories with the world.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
+                            <a href="add-author.html" class="text-gray-300 hover:text-white">Add Author</a>
+                            <a href="add-category.html" class="text-gray-300 hover:text-white">Add Category</a>
+                            <a href="add-post.html" class="text-gray-300 hover:text-white">Add Post</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Categories</h3>
+                        <div class="flex flex-col space-y-2">
+                            <a href="#" class="text-gray-300 hover:text-white">Technology</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Lifestyle</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Health</a>
+                            <a href="#" class="text-gray-300 hover:text-white">Business</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Simple Blog. All rights reserved. | Made with <i class="fas fa-heart text-red-400 mx-1"></i> for bloggers</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
