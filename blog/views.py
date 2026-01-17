@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import Category
-from .forms import categoryForm
+from .models import Category,Author
+from .forms import categoryForm,authorForm
 
 def home(request):
     return render(request,"index.html")
@@ -46,3 +46,41 @@ def edit_category(request,id):
     categories = Category.objects.all() 
     
     return render(request, "add-category.html", {'cat':cat,'total': categories.count(), 'categories': categories})
+
+
+def add_author(request):
+
+    if(request.method =='POST'):
+        form = authorForm(request.POST,request.FILES)
+        if(form.is_valid()):
+            form.save()
+            return redirect('add_author')
+            
+    else:
+        form = authorForm()
+
+    authors = Author.objects.all()
+
+    return render(request,'add-author.html',{"authors":authors})
+
+def edit_author(request,id):
+    author = Author.objects.get(id=id)
+
+    if(request.method =='POST'):
+        form = authorForm(request.POST,request.FILES,instance=author)
+        if(form.is_valid()):
+            form.save()
+            return redirect('add_author')
+            
+    else:
+        form = authorForm()
+    
+    authors = Author.objects.all()
+
+    return render(request,'add-author.html',{"authors":authors,"author":author})
+
+
+def delete_author(request,id):
+    auth = Author.objects.get(id=id)
+    auth.delete()
+    return redirect('add_author')

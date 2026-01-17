@@ -10,3 +10,15 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
     
+
+
+class Author(models.Model):
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150,blank=True)
+    email = models.EmailField()
+    biography = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
+    image = models.ImageField(upload_to="profile/")
+
+    def __str__(self):
+        return f"{self.first_name} - {self.email}"
