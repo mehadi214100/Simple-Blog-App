@@ -70,7 +70,7 @@
                     <a href="{% url "home" %}" class="px-4 py-2 rounded-lg  {% if request.resolver_match.url_name == 'home' %}active-page{% endif %}  font-medium">Home</a>
                     <a href="{% url "add_author" %}" class="px-4 py-2 rounded-lg  {% if request.resolver_match.url_name == 'add_author' %}active-page{% endif %} font-medium">Add Author</a>
                     <a href="{% url "add_category" %}" class="px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'add_category' %}active-page{% endif %} font-medium">Add Category</a>
-                    <a href="add-post.html" class="px-4 py-2 rounded-lg font-medium">Add Post</a>
+                    <a href="{% url "add_post" %}" class="px-4 py-2 rounded-lg {% if request.resolver_match.url_name == 'add_post' %}active-page{% endif %} font-medium">Add Post</a>
                 </div>
             </div>
         </div>

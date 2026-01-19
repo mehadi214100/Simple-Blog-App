@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import Category,Author
-from .forms import categoryForm,authorForm
+from .models import Category,Author,Post
+from .forms import categoryForm,authorForm,postForm
 
 def home(request):
     return render(request,"index.html")
@@ -32,7 +32,6 @@ def delete_category(request,id):
     cat.delete()
     return redirect('add_category')
 
-
 def edit_category(request,id):
     cat = Category.objects.get(id=id)
 
@@ -46,7 +45,6 @@ def edit_category(request,id):
     categories = Category.objects.all() 
     
     return render(request, "add-category.html", {'cat':cat,'total': categories.count(), 'categories': categories})
-
 
 def add_author(request):
 
@@ -79,8 +77,28 @@ def edit_author(request,id):
 
     return render(request,'add-author.html',{"authors":authors,"author":author})
 
-
 def delete_author(request,id):
     auth = Author.objects.get(id=id)
     auth.delete()
     return redirect('add_author')
+
+def add_post(request):
+
+    if(request.method=='POST'):
+        form = postForm(request.POST,request.FILES)
+        if(form.is_valid()):
+            form.save()
+            return redirect('home')
+    else:
+        form = postForm()
+    
+    authors = Author.objects.all()
+    categories = Category.objects.all()
+
+    context = {
+        'form': form,
+        'authors': authors,
+        'categories': categories
+    }
+    return render(request, 'add-post.html', context)
+

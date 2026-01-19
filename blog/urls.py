@@ -8,4 +8,5 @@ urlpatterns = [
     path("add_author/",views.add_author,name="add_author"),
     path("edit_author/<int:id>",views.edit_author,name="edit_author"),
     path("delete_author/<int:id>/",views.delete_author,name="delete_author"),
+    path("add_post/",views.add_post,name="add_post"),
 ]
