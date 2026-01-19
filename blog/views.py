@@ -3,7 +3,13 @@ from .models import Category,Author,Post
 from .forms import categoryForm,authorForm,postForm
 
 def home(request):
-    return render(request,"index.html")
+    all_post = Post.objects.all().order_by('publish_date')
+    featured_post = Post.objects.filter(is_featured=True)[0]
+    context = {
+        "posts":all_post,
+        "featured_post":featured_post,
+    }
+    return render(request,"index.html",context)
 
 def add_category(request):
 
@@ -88,11 +94,11 @@ def add_post(request):
         form = postForm(request.POST,request.FILES)
         if(form.is_valid()):
             form.save()
-            return redirect('home')
+            return redirect('home')           
     else:
         form = postForm()
     
-    authors = Author.objects.all()
+    authors = Author.objects.filter(is_active=True)
     categories = Category.objects.all()
 
     context = {
@@ -102,3 +108,9 @@ def add_post(request):
     }
     return render(request, 'add-post.html', context)
 
+def view_post(request,id):
+    post = Post.objects.get(id=id)
+    context = {
+        "post":post,
+    }
+    return render(request,"blog-view.html",context)

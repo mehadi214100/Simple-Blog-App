@@ -36,7 +36,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
 
     content = RichTextField()
-    tags = models.CharField(max_length=200, help_text="Comma separated tags")
+    tags = models.CharField(max_length=200, blank=True,help_text="Comma separated tags")
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='published')
     publish_date = models.DateTimeField(default=timezone.now)
 
